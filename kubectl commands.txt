@@ -1,0 +1,17 @@
+﻿set kubeconfig=C:\Users\jansnij\.kube\config
+
+
+
+kubectl apply -f E:\Develop\Experiment\Docker_K8s\azure-voting-app-redis\azure-vote-all-in-one-redis.yaml
+kubectl delete -f E:\Develop\Experiment\Docker_K8s\azure-voting-app-redis\azure-vote-all-in-one-redis.yaml
+
+kubectl get deployments 
+kubectl describe deployments xxx
+
+kubectl get replicasets
+kubectl describe replicasets
+
+kubectl get pods --output=wide
+
+curl -v http://localhost:15125
+

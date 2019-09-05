@@ -48,7 +48,8 @@ spec:
         "beta.kubernetes.io/os": linux
       containers:
       - name: azure-vote-front
-        image: microsoft/azure-vote-front:v1
+        image: azure-vote-front:latest
+        imagePullPolicy: IfNotPresent #otherwise it doesn't work locally
         ports:
         - containerPort: 80
         resources:
@@ -67,6 +68,7 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - port: 80
+  - port: 15125
+    targetPort: 80 # default is deze gelijk aan de port
   selector:
     app: azure-vote-front
